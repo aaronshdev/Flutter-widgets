@@ -27,6 +27,11 @@ class AppRoutes {
         name: 'Animated screen',
         screen: const Animated(),
         icon: Icons.category),    
+    MenuOption(
+        route: 'form',
+        name: 'Form screen',
+        screen: const FormScreen(),
+        icon: Icons.list_alt_outlined),      
   ];
 
   static Map<String, Widget Function(BuildContext)> getAppRoutes() {

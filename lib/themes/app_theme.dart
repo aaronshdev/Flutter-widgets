@@ -6,29 +6,42 @@ class AppTheme {
   static final ThemeData lightTheme = ThemeData.light().copyWith(
       primaryColor: Colors.indigo,
       appBarTheme: const AppBarTheme(
-        color: primary, elevation: 20, shadowColor: Colors.indigoAccent
-      ),
+          color: primary, elevation: 20, shadowColor: Colors.indigoAccent),
       textButtonTheme: TextButtonThemeData(
-        style: TextButton.styleFrom(foregroundColor: primary)
-      ),
+          style: TextButton.styleFrom(foregroundColor: primary)),
       cardTheme: CardTheme(
-        shadowColor: AppTheme.primary.withOpacity(0.5),
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15))
-      ),
+          shadowColor: AppTheme.primary.withOpacity(0.5),
+          shape:
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(15))),
       floatingActionButtonTheme:
           const FloatingActionButtonThemeData(backgroundColor: primary),
       elevatedButtonTheme: ElevatedButtonThemeData(
-        style: ElevatedButton.styleFrom(
-          backgroundColor: primary,
-          // foregroundColor: primary,
-          shape: const StadiumBorder(),
-          elevation: 5
-        )
-      ),
+          style: ElevatedButton.styleFrom(
+              textStyle: const TextStyle(fontSize: 20),
+              backgroundColor: primary,
+              minimumSize: const Size(double.infinity, 50.0),
+              // foregroundColor: primary,
+              shape: const StadiumBorder(),
+              elevation: 5)),
+
+      inputDecorationTheme: InputDecorationTheme(
+        border: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(15), 
+          borderSide: BorderSide(color: Colors.black)
+          ),
+        enabledBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(15), 
+          borderSide: BorderSide(color: primary)
+          ),
+        focusedBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(15), 
+          borderSide: BorderSide(color: primary)
+          )  
+      ), 
+
       dialogTheme: DialogTheme(
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(25))
-      )
-  );
+          shape:
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(25))));
 
   static final ThemeData darkTheme = ThemeData.dark().copyWith(
       primaryColor: Colors.black87,
