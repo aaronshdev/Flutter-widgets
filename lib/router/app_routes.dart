@@ -26,12 +26,22 @@ class AppRoutes {
         route: 'animated',
         name: 'Animated screen',
         screen: const Animated(),
-        icon: Icons.category),    
+        icon: Icons.category),
     MenuOption(
         route: 'form',
         name: 'Form screen',
         screen: const FormScreen(),
-        icon: Icons.list_alt_outlined),      
+        icon: Icons.list_alt_outlined),
+    MenuOption(
+        route: 'slider',
+        name: 'Slider screen',
+        screen: const SliderScreen(),
+        icon: Icons.slow_motion_video),
+        MenuOption(
+        route: 'listviewbuilder',
+        name: 'ListView Builers screen',
+        screen: const ListViewBuilderScreen(),
+        icon: Icons.build_circle_outlined),
   ];
 
   static Map<String, Widget Function(BuildContext)> getAppRoutes() {

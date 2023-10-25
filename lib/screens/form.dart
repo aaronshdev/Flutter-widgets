@@ -16,7 +16,7 @@ class FormScreen extends StatelessWidget {
       "phone" :"",
       "addres": "",
       "mail"  :"",
-      "password": ""
+      "password": "",
     };
     return Scaffold(
       appBar: AppBar(
