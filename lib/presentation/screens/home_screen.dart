@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -11,8 +12,9 @@ class HomeScreen extends StatelessWidget {
       ),
       body: Center(
         child: TextButton(
-          child: const Text('Menu'),
-          onPressed: () => Navigator.pushNamed(context, 'menu'),
+          child: const Text('Home  screen'),
+          //onPressed: () => Navigator.pushNamed(context, 'menu'),
+          onPressed: () => context.push('/menu'),
         ),
       ),
     );

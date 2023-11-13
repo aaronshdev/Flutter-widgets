@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:fl_components/components/funtions_input.dart';
+// import 'package:fl_components/components/funtions_input.dart';
 
 class NameInput extends StatelessWidget {
   final String? name;

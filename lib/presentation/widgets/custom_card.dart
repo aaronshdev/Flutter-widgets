@@ -1,22 +1,30 @@
 import 'package:flutter/material.dart';
-import '../themes/app_theme.dart';
+import '../../config/themes/app_theme.dart';
 
 class CustomCard extends StatelessWidget {
+  final String tittle;
+  final double elevation;
   const CustomCard({
-    Key? key,
+    Key? key, 
+    required this.tittle, 
+    required this.elevation,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Card(
+      elevation: elevation,
       child: Column(children: [
-        const ListTile(
-          leading: Icon(
+        const Align(
+          alignment: Alignment.topRight,
+          child: Icon(Icons.more_vert_outlined)),
+        ListTile(
+          leading: const Icon(
             Icons.closed_caption,
             color: AppTheme.primary,
           ),
-          title: Text('titulo'),
-          subtitle: Text(
+          title: Text(tittle),
+          subtitle: const Text(
               'Sint in mollit amet ut ea magna ex consequat dolor qui sint cupidatat. Ut duis ullamco est magna sit officia minim officia. Elit consectetur quis nostrud ad id incididunt do tempor laboris et incididunt veniam. Dolore culpa duis aute ipsum do. Do officia ex reprehenderit irure pariatur tempor. Sit elit aliquip duis mollit duis cupidatat fugiat dolor quis ea.'),
         ),
         Padding(
@@ -26,10 +34,10 @@ class CustomCard extends StatelessWidget {
             children: [
               TextButton(
                 onPressed: () {},
-                child: Text('Cancelar'),
                 style: TextButton.styleFrom(),
+                child: const Text('Cancelar'),
               ),
-              TextButton(onPressed: () {}, child: Text('Aceptar')),
+              TextButton(onPressed: () {}, child: const Text('Aceptar')),
             ],
           ),
         )

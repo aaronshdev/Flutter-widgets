@@ -1,4 +1,4 @@
-import 'package:fl_components/themes/app_theme.dart';
+import 'package:fl_components/config/themes/app_theme.dart';
 import 'package:flutter/material.dart';
 
 class SliderScreen extends StatefulWidget {
@@ -43,10 +43,10 @@ sliderFunction(value)  {
           activeColor: AppTheme.primary,
           title: const Text('Desabilitar slider'), 
           onChanged: (value) => setState(() {
-          _enable = value?? true;
+          _enable = value!= value;
           })
         ),
-        AboutListTile(),
+        const AboutListTile(),
         // Checkbox(value: _enable, onChanged: ((value) {
         //   _enable = value?? true;
         //   setState(() {
@@ -56,7 +56,7 @@ sliderFunction(value)  {
         Expanded(
           child: SingleChildScrollView(
             child: Image(
-              image: NetworkImage('https://static.wikia.nocookie.net/death-battle-fanon-wiki-en-espanol/images/3/3d/Luffy.png/revision/latest?cb=20190703070025&path-prefix=es'),
+              image: const NetworkImage('https://static.wikia.nocookie.net/death-battle-fanon-wiki-en-espanol/images/3/3d/Luffy.png/revision/latest?cb=20190703070025&path-prefix=es'),
               fit: BoxFit.contain,
               width: _sliderValue,
               ),
