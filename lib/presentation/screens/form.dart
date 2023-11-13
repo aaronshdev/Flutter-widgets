@@ -1,5 +1,5 @@
 import 'package:fl_components/components/funtions_input.dart';
-import 'package:fl_components/widgets/widgets.dart';
+import 'package:fl_components/presentation/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 
 class FormScreen extends StatelessWidget {
@@ -16,7 +16,7 @@ class FormScreen extends StatelessWidget {
       "phone" :"",
       "addres": "",
       "mail"  :"",
-      "password": ""
+      "password": "",
     };
     return Scaffold(
       appBar: AppBar(
@@ -98,7 +98,7 @@ class FormScreen extends StatelessWidget {
                   onPressed: () {
                     FocusScope.of(context).requestFocus(FocusNode());
                     if (formKey.currentState!.validate()) {
-                      print(formValues);
+                      debugPrint('$formValues');
                       return;
                     }
                   },

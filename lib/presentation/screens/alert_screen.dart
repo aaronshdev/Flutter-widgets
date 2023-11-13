@@ -10,16 +10,16 @@ class AlertScreen extends StatelessWidget {
       builder: (context) {
         return AlertDialog(
           title: const Text('Alert'),
-          content: Column(
+          content: const  Column(
             mainAxisSize: MainAxisSize.min, 
               children: [
-              const Padding(
+              Padding(
                 padding: EdgeInsets.only(bottom: 25),
                 child: Text('Contenido'),
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: const [Icon(Icons.album_rounded), FlutterLogo()],
+                children: [Icon(Icons.album_rounded), FlutterLogo()],
               )
             ]
           ),

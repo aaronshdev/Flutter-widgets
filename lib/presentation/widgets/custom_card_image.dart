@@ -13,6 +13,8 @@ class CustomImageScreen extends StatelessWidget {
       elevation: 20,
       child: Column(
         children: [
+          Stack(
+            children: [
           FadeInImage(
             placeholder: const AssetImage('assets/loadings/jar-loading.gif'),
             image: NetworkImage(imageURL),
@@ -20,6 +22,18 @@ class CustomImageScreen extends StatelessWidget {
             height: 240,
             fit: BoxFit.cover,
             // fadeInDuration: Duration(microseconds: 1000),
+          ),
+              Align(
+            alignment: Alignment.topRight,
+            child: Container(
+              decoration: const BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.only(bottomLeft: Radius.circular(20))
+              ),
+              child: IconButton(onPressed: (){}, icon: const Icon(Icons.more_vert_rounded)),
+             )
+          ),
+            ],
           ),
           Container(
               alignment: AlignmentDirectional.centerEnd,
