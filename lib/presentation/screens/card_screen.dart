@@ -12,7 +12,6 @@ class CardScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
       appBar: AppBar(
         title: const Text('Card widget'),
@@ -23,18 +22,17 @@ class CardScreen extends StatelessWidget {
           ...cards.map(
             (card)=> CustomCard(tittle: card['label'], elevation: card['elevation'])
           ),
-          
           const CustomImageScreen(
             imageURL:
-                'https://www.nationalgeographic.com.es/medio/2022/11/08/lobo-negro-canis-lupus_227e9678_1280x960.jpg',
+              'https://www.nationalgeographic.com.es/medio/2022/11/08/lobo-negro-canis-lupus_227e9678_1280x960.jpg',
             nameImage: 'Black wolf',
           ),
           const CustomImageScreen(
               imageURL:
-                  'https://atlasanimal.com/wp-content/uploads/2021/02/lobo.jpg.webp'),
+                'https://atlasanimal.com/wp-content/uploads/2021/02/lobo.jpg.webp'),
           const CustomImageScreen(
             imageURL:
-                'https://www.nationalgeographic.com.es/medio/2022/12/12/lobo-1_dce3fc33_221212160111_1280x720.jpg',
+              'https://www.nationalgeographic.com.es/medio/2022/12/12/lobo-1_dce3fc33_221212160111_1280x720.jpg',
             nameImage: 'Gray wolf',
           )
         ],

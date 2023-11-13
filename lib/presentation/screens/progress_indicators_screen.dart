@@ -20,8 +20,7 @@ class ProgressIndicatorsScreen extends StatelessWidget {
               padding: const EdgeInsets.only(top: 10),
               child: CircularProgressIndicator(
                 strokeWidth: 2,
-                backgroundColor:
-                    Theme.of(context).primaryColor.withOpacity(0.5),
+                backgroundColor: Theme.of(context).primaryColor.withOpacity(0.5),
               ),
             ),
             const Padding(
@@ -45,31 +44,30 @@ class _ControlledProgressIndicator extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return StreamBuilder(
-        stream: Stream.periodic(const Duration(milliseconds: 300), (value) {
-          return (value * 2) / 100;
-        }).takeWhile((element) => element < 100),
-        builder: (context, snapshot) {
-          final progressValue = snapshot.data ?? 0;
-          return Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 8.0),
-            child: Row(
-              children: [
-                Padding(
-                  padding: const EdgeInsets.only(right: 10),
-                  child: CircularProgressIndicator(
-                    value: progressValue,
-                    strokeWidth: 2,
-                    backgroundColor:
-                        Theme.of(context).primaryColor.withOpacity(0.5),
-                  ),
-                ),
-                Expanded(
-                    child: LinearProgressIndicator(
+      stream: Stream.periodic(const Duration(milliseconds: 300), (value) {
+        return (value * 2) / 100;
+      }).takeWhile((element) => element < 100),
+      builder: (context, snapshot) {
+        final progressValue = snapshot.data ?? 0;
+        return Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 8.0),
+          child: Row(
+            children: [
+              Padding(
+                padding: const EdgeInsets.only(right: 10),
+                child: CircularProgressIndicator(
                   value: progressValue,
-                ))
-              ],
-            ),
-          );
-        });
+                  strokeWidth: 2,
+                  backgroundColor: Theme.of(context).primaryColor.withOpacity(0.5),
+                ),
+              ),
+              Expanded(
+                child: LinearProgressIndicator(value: progressValue,)
+              )
+            ],
+          ),
+        );
+      }
+    );
   }
 }

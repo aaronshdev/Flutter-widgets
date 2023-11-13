@@ -20,12 +20,13 @@ class _ListViewBuilderScreenState extends State<ListViewBuilderScreen> {
   void initState() {
     super.initState();
 
-    scrollController.addListener(() {
-      if ((scrollController.position.pixels + 500) >=
-          scrollController.position.maxScrollExtent) {
-        loadNextPage();
+    scrollController.addListener( () {
+        if ((scrollController.position.pixels + 500) >=
+            scrollController.position.maxScrollExtent) {
+          loadNextPage();
+        }
       }
-    });
+    );
   }
 
   @override
@@ -93,21 +94,23 @@ class _ListViewBuilderScreenState extends State<ListViewBuilderScreen> {
                 itemCount: imagesId.length,
                 itemBuilder: (BuildContext context, int index) {
                   return FadeInImage(
-                      width: double.infinity,
-                      height: 300,
-                      fit: BoxFit.cover,
-                      placeholder:
-                          const AssetImage('assets/loadings/jar-loading.gif'),
-                      image: NetworkImage(
-                          'https://picsum.photos/id/${imagesId[index]}/400/300'));
+                    width: double.infinity,
+                    height: 300,
+                    fit: BoxFit.cover,
+                    placeholder: const AssetImage('assets/loadings/jar-loading.gif'),
+                    image: NetworkImage(
+                      'https://picsum.photos/id/${imagesId[index]}/400/300'
+                    )
+                  );
                 },
               ),
             ),
             if (isLoading)
               Positioned(
-                  bottom: 40,
-                  left: size.width * 0.5 - 30,
-                  child: _loadingIcon())
+                bottom: 40,
+                left: size.width * 0.5 - 30,
+                child: _loadingIcon()
+              )
           ],
         ),
       ),
@@ -119,15 +122,15 @@ class _ListViewBuilderScreenState extends State<ListViewBuilderScreen> {
   }
 
   Container _loadingIcon() => Container(
-        padding: const EdgeInsets.all(10),
-        height: 60,
-        width: 60,
-        decoration: BoxDecoration(
-          color: Colors.white.withOpacity(0.9),
-          shape: BoxShape.circle,
-        ),
-        child: const CircularProgressIndicator(
-          color: AppTheme.primary,
-        ),
-      );
+    padding: const EdgeInsets.all(10),
+    height: 60,
+    width: 60,
+    decoration: BoxDecoration(
+      color: Colors.white.withOpacity(0.9),
+      shape: BoxShape.circle,
+    ),
+    child: const CircularProgressIndicator(
+      color: AppTheme.primary,
+    ),
+  );
 }

@@ -36,12 +36,13 @@ class _UiControlsWidgetState extends State<_UiControlsWidget> {
       physics: const ClampingScrollPhysics(),
       children: [
         SwitchListTile(
-            title: const Text('Developer mode'),
-            subtitle: const Text('Controles adicionales'),
-            value: isDeveloper,
-            onChanged: (value) => setState(() {
-                  isDeveloper = !isDeveloper;
-                })),
+          title: const Text('Developer mode'),
+          subtitle: const Text('Controles adicionales'),
+          value: isDeveloper,
+          onChanged: (value) => setState(() {
+            isDeveloper = !isDeveloper;
+          })
+        ),
 
         ExpansionTile(
           title: const Text('Means transportation'),

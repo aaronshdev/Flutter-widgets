@@ -2,7 +2,22 @@ import 'package:flutter/material.dart';
 
 class AlertScreen extends StatelessWidget {
   const AlertScreen({Key? key}) : super(key: key);
-
+  
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Center(
+        child: ElevatedButton(
+          onPressed: () => viewAlert(context),
+          child: const Text('Mostrar alerta')
+        )
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () => Navigator.pop(context),
+        child: const Icon(Icons.close),
+      ),
+    );
+  }
   void viewAlert(BuildContext context) {
     showDialog(
       barrierDismissible: true,
@@ -26,25 +41,12 @@ class AlertScreen extends StatelessWidget {
           actions: [
             TextButton(
               onPressed: () => Navigator.pop(context), 
-            child: const Text('Cancelar')
+              child: const Text('Cancelar')
             )
           ],
         );
       },
     );
   }
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
-          child: ElevatedButton(
-              onPressed: () => viewAlert(context),
-              child: const Text('Mostrar alerta'))),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () => Navigator.pop(context),
-        child: const Icon(Icons.close),
-      ),
-    );
-  }
+ 
 }

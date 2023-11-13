@@ -12,17 +12,17 @@ class SlideInfo {
 
 final slides = <SlideInfo>[
   const SlideInfo(
-      'Cupidatat veniam et dolore reprehenderit',
-      'Reprehenderit ipsum officia quis consectetur voluptate eiusmod mollit exercitation in do commodo ut.',
-      'assets/onboarding/1.png'),
+    'Cupidatat veniam et dolore reprehenderit',
+    'Reprehenderit ipsum officia quis consectetur voluptate eiusmod mollit exercitation in do commodo ut.',
+    'assets/onboarding/1.png'),
   const SlideInfo(
-      'Ad aute consectetur eu reprehenderit pariatur qui ullamco dolor.',
-      'Laboris elit ex qui excepteur magna sunt magna do dolor voluptate.',
-      'assets/onboarding/2.png'),
+    'Ad aute consectetur eu reprehenderit pariatur qui ullamco dolor.',
+    'Laboris elit ex qui excepteur magna sunt magna do dolor voluptate.',
+    'assets/onboarding/2.png'),
   const SlideInfo(
-      'Laboris qui Lorem id et exercitation',
-      'Pariatur non excepteur cupidatat amet reprehenderit qui.',
-      'assets/onboarding/3.png'),
+    'Laboris qui Lorem id et exercitation',
+    'Pariatur non excepteur cupidatat amet reprehenderit qui.',
+    'assets/onboarding/3.png'),
 ];
 
 class OnboardingScreen extends StatefulWidget {
@@ -64,10 +64,9 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
             controller: pageViewController,
             physics: const BouncingScrollPhysics(),
             //primera forma
-            children: slides
-                .map((data) =>
-                    _SlideWidget(data.title, data.caption, data.imageUrl))
-                .toList(),
+            children: slides.map((data) =>
+              _SlideWidget(data.title, data.caption, data.imageUrl)
+            ).toList(),
             //segunda forma
             // children: [
             //   ...slides.map(
@@ -76,25 +75,27 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
             // ],
           ),
           Positioned(
-              right: 20,
-              top: 40,
-              child: TextButton(
-                child: const Text('Skipe'),
-                onPressed: () => context.pop(),
-              )),
+            right: 20,
+            top: 40,
+            child: TextButton(
+              child: const Text('Skipe'),
+              onPressed: () => context.pop(),
+            )
+          ),
           Visibility(
             visible: finalPage,
             child: Positioned(
-                right: 20,
-                bottom: 20,
-                child: FadeInRight(
-                  from: 15,
-                  delay: const Duration(seconds: 1),
-                  child: FilledButton(
-                    child: const Text('Comenzar'),
-                    onPressed: () {},
-                  ),
-                )),
+              right: 20,
+              bottom: 20,
+              child: FadeInRight(
+                from: 15,
+                delay: const Duration(seconds: 1),
+                child: FilledButton(
+                  child: const Text('Comenzar'),
+                  onPressed: () {},
+                ),
+              )
+            ),
           )
         ],
       ),
@@ -115,25 +116,26 @@ class _SlideWidget extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(20),
       child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Image(image: AssetImage(urlImage)),
-            Padding(
-              padding: const EdgeInsets.only(top: 10.0),
-              child: Text(
-                title,
-                style: titleStyle,
-              ),
+        crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Image(image: AssetImage(urlImage)),
+          Padding(
+            padding: const EdgeInsets.only(top: 10.0),
+            child: Text(
+              title,
+              style: titleStyle,
             ),
-            Padding(
-              padding: const EdgeInsets.only(top: 10.0),
-              child: Text(
-                caption,
-                style: captionStyle,
-              ),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(top: 10.0),
+            child: Text(
+              caption,
+              style: captionStyle,
             ),
-          ]),
+          ),
+        ]
+      ),
     );
   }
 }

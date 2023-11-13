@@ -15,30 +15,31 @@ class CustomImageScreen extends StatelessWidget {
         children: [
           Stack(
             children: [
-          FadeInImage(
-            placeholder: const AssetImage('assets/loadings/jar-loading.gif'),
-            image: NetworkImage(imageURL),
-            width: double.infinity,
-            height: 240,
-            fit: BoxFit.cover,
-            // fadeInDuration: Duration(microseconds: 1000),
-          ),
-              Align(
-            alignment: Alignment.topRight,
-            child: Container(
-              decoration: const BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.only(bottomLeft: Radius.circular(20))
+              FadeInImage(
+                placeholder: const AssetImage('assets/loadings/jar-loading.gif'),
+                image: NetworkImage(imageURL),
+                width: double.infinity,
+                height: 240,
+                fit: BoxFit.cover,
+                // fadeInDuration: Duration(microseconds: 1000),
               ),
-              child: IconButton(onPressed: (){}, icon: const Icon(Icons.more_vert_rounded)),
-             )
-          ),
+              Align(
+                alignment: Alignment.topRight,
+                child: Container(
+                  decoration: const BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.only(bottomLeft: Radius.circular(20))
+                  ),
+                  child: IconButton(onPressed: (){}, icon: const Icon(Icons.more_vert_rounded)),
+                )
+              ),
             ],
           ),
           Container(
-              alignment: AlignmentDirectional.centerEnd,
-              padding: const EdgeInsets.only(top: 10, bottom: 10, right: 20),
-              child: Text(nameImage ?? 'No name'))
+            alignment: AlignmentDirectional.centerEnd,
+            padding: const EdgeInsets.only(top: 10, bottom: 10, right: 20),
+            child: Text(nameImage ?? 'No name')
+          )
         ],
       ),
     );

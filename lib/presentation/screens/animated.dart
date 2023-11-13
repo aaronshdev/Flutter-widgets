@@ -1,5 +1,4 @@
 import 'dart:math';
-
 import 'package:flutter/material.dart';
 
 class Animated extends StatefulWidget {
@@ -20,7 +19,7 @@ class _AnimatedState extends State<Animated> {
     _width = rnd.nextInt(300).toDouble() + 70;
     _height = rnd.nextInt(300).toDouble() + 70;
     _color =
-        Color.fromRGBO(rnd.nextInt(255), rnd.nextInt(255), rnd.nextInt(255), 1);
+      Color.fromRGBO(rnd.nextInt(255), rnd.nextInt(255), rnd.nextInt(255), 1);
     _borderRadius = BorderRadius.circular(rnd.nextInt(100).toDouble() + 10);
 
     setState(() {});
@@ -29,22 +28,25 @@ class _AnimatedState extends State<Animated> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text("Animacion n' Circle Avatar"), actions: [
-        Container(
-          margin: const EdgeInsets.only(right: 5),
-          child: const CircleAvatar(
-            child: Text("SH"),
-          ),
-        )
-      ]),
+      appBar: AppBar(
+        title: const Text("Animacion n' Circle Avatar"), 
+        actions: [
+          Container(
+            margin: const EdgeInsets.only(right: 5),
+            child: const CircleAvatar(
+              child: Text("SH"),
+            ),
+          )
+        ]
+      ),
       body: Center(
         child: AnimatedContainer(
-            duration: const Duration(milliseconds: 400),
-            curve: Curves.easeInCubic,
-            width: _width,
-            height: _height,
-            decoration:
-                BoxDecoration(color: _color, borderRadius: _borderRadius)),
+          duration: const Duration(milliseconds: 400),
+          curve: Curves.easeInCubic,
+          width: _width,
+          height: _height,
+          decoration: BoxDecoration(color: _color, borderRadius: _borderRadius)      
+        ),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: changedShape,
