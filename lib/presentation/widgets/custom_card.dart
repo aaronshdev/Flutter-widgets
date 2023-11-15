@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import '../../config/themes/app_theme.dart';
 
 class CustomCard extends StatelessWidget {
   final String tittle;
@@ -22,7 +21,6 @@ class CustomCard extends StatelessWidget {
         ListTile(
           leading: const Icon(
             Icons.closed_caption,
-            color: AppTheme.primary,
           ),
           title: Text(tittle),
           subtitle: const Text(

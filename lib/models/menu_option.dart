@@ -20,6 +20,12 @@ class MenuOption {
 
 const appMenuItems = <MenuOption>[
   MenuOption(
+      route: '/counted',
+      name: 'Counted',
+      subtitle: 'Riverpod plus',
+      screen: CountedScreen(),
+      icon: Icons.add_circle,),
+  MenuOption(
       route: '/',
       name: 'Home screen',
       subtitle: 'Home',
@@ -91,6 +97,12 @@ const appMenuItems = <MenuOption>[
       subtitle: 'Onboarding screen',
       screen: OnboardingScreen(),
       icon: Icons.image_aspect_ratio_rounded,),
-
+  MenuOption(
+      route: '/theme-changer',
+      name: 'Change Theme',
+      subtitle: 'Changer theme screen',
+      screen: ThemeChangeScreen(),
+      icon: Icons.color_lens_rounded,),
+     
 ];
 

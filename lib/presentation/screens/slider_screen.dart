@@ -1,4 +1,3 @@
-import 'package:fl_components/config/themes/app_theme.dart';
 import 'package:flutter/material.dart';
 
 class SliderScreen extends StatefulWidget {
@@ -28,12 +27,10 @@ class _SliderScreenState extends State<SliderScreen> {
             min: 50,
             max: 400,
             value: _sliderValue,
-            activeColor: AppTheme.primary,
             onChanged: _enable ? (value) => sliderFunction(value):null,
           ),
           CheckboxListTile(
             value: _enable,
-            activeColor: AppTheme.primary,
             title: const Text('Desabilitar slider'), 
             onChanged: (value) => setState(() {
             _enable = value?? true;
@@ -41,7 +38,6 @@ class _SliderScreenState extends State<SliderScreen> {
           ),
           SwitchListTile(
             value: _enable,
-            activeColor: AppTheme.primary,
             title: const Text('Desabilitar slider'), 
             onChanged: (value) => setState(() {
             _enable = value!= value;

@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-import '../../config/themes/app_theme.dart';
-
 class ListViewBuilderScreen extends StatefulWidget {
   const ListViewBuilderScreen({super.key});
 
@@ -129,8 +127,6 @@ class _ListViewBuilderScreenState extends State<ListViewBuilderScreen> {
       color: Colors.white.withOpacity(0.9),
       shape: BoxShape.circle,
     ),
-    child: const CircularProgressIndicator(
-      color: AppTheme.primary,
-    ),
+    child: const CircularProgressIndicator(),
   );
 }

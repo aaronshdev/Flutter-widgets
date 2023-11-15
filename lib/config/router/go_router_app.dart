@@ -58,5 +58,13 @@ final routerApp = GoRouter(
       path: '/onboarding',
       builder: (context, state) => const OnboardingScreen(),
     ),
+    GoRoute(
+      path: '/counted',
+      builder: (context, state) => const CountedScreen(),
+    ),
+    GoRoute(
+      path: '/theme-changer',
+      builder: (context, state) => const ThemeChangeScreen(),
+    ),
   ],
 );
