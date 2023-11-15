@@ -17,7 +17,10 @@ class AppTheme {
   final int selectedColor;
   //static const Color primary = Colors.indigo;
 
-  AppTheme({this.isDarckMode = true, this.selectedColor= 0,});
+  AppTheme({
+    this.isDarckMode = true,
+    this.selectedColor = 0,
+  });
 
   ThemeData getTheme() => ThemeData(
     useMaterial3: true,
@@ -30,8 +33,7 @@ class AppTheme {
     //primaryColor: colorList[selectedColor],
     textTheme: TextTheme(
       titleLarge: TextStyle(color: colorList[selectedColor]),
-      bodySmall: TextStyle(color: colorList[selectedColor].withOpacity(0.6))
-    ),
+      bodySmall: TextStyle(color: colorList[selectedColor].withOpacity(0.6))),
     appBarTheme: AppBarTheme(
       // color: primary,
       elevation: 20,
@@ -40,7 +42,7 @@ class AppTheme {
       // titleTextStyle: TextStyle(fontSize: 18, color: Colors.white)
     ),
     textButtonTheme: TextButtonThemeData(
-        style: TextButton.styleFrom(foregroundColor: colorList[selectedColor])
+      style: TextButton.styleFrom(foregroundColor: colorList[selectedColor])
     ),
     cardTheme: CardTheme(
       shadowColor: colorList[selectedColor].withOpacity(0.5),
@@ -70,8 +72,14 @@ class AppTheme {
       )
     ),
     dialogTheme: DialogTheme(
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(25))
-    )
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(25)))
+  );
+  AppTheme copyWith({
+    bool? isDarckMode,
+    int? selectedColor
+  }) => AppTheme(
+    isDarckMode: isDarckMode?? this.isDarckMode,
+    selectedColor: selectedColor?? this.selectedColor
   );
   // static final ThemeData darkTheme = ThemeData.dark().copyWith(
   //     useMaterial3: true,

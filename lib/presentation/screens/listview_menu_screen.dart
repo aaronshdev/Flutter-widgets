@@ -48,7 +48,7 @@ class _CustomListTile extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, ref) {
-    final colorSelected = ref.watch(selectedColorProvider);
+    final colorSelected = ref.watch(themeNotifierProvider).selectedColor;
     return ListTile(
       leading: Icon(
         option.icon,
